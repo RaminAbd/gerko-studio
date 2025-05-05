@@ -1,0 +1,9 @@
+<div>
+  <app-table
+    [Array]="types"
+    [cols]="cols"
+    [TableName]="'Project types'"
+    [showCreate]="true"
+    (Action)="tableActionHandler($event)"
+  ></app-table>
+</div>

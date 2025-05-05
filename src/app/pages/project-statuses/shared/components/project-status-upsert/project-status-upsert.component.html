@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="row1">
+    <div class="input-item" *ngFor="let item of request.name.items">
+      <label>{{ "Name" | translate }} ( {{ item.languageName }} )</label>
+      <input
+        type="text"
+        [ngClass]="{ invalid: (!item.isValid && isSubmitted) || (!item.value && isSubmitted) }"
+        [(ngModel)]="item.value"
+        placeholder="{{ item.languageName | translate }}"
+      />
+    </div>
+  </div>
+  <div class="btns">
+    <button (click)="ref.close()">{{ "Cancel" }}</button>
+    <button class="save" (click)="save()">{{ "Save" }}</button>
+  </div>
+</div>
