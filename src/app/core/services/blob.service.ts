@@ -8,7 +8,7 @@ import { FileModel } from '../models/File.model';
   providedIn: 'root',
 })
 export class BlobService extends BaseCrudApiService {
-  ServiceUrl: string = 'v1/Files/';
+  ServiceUrl: string = 'files/';
   constructor(http: HttpClient, handler: ApplicationMessageCenterService) {
     super(http, handler);
   }

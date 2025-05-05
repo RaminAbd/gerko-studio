@@ -1,0 +1,39 @@
+.wrapper {
+  .content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+::ng-deep {
+  .p-multiselect {
+    background: var(--grey) !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--border-color) !important;
+  }
+}
+.remember{
+  width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  input{
+    width: 18px;
+    height: 18px;
+    border: 1px solid #bcc9d3;
+    border-radius: 5px;
+    margin: 0;
+    cursor: pointer;
+
+  }
+  label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #4b4b4b;
+    cursor: pointer;
+  }
+}
