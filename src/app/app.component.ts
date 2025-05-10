@@ -32,7 +32,7 @@ export class AppComponent {
         mergeMap((route) => route.data),
       )
       .subscribe((data) => {
-        const title = data['title'] || 'Civil Reporter';
+        const title = data['title'] || 'Gerko studio';
         this.titleService.setTitle(title);
       });
   }
