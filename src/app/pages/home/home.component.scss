@@ -1,0 +1,384 @@
+::ng-deep {
+  .p-galleria {
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+    height: 100% !important;
+
+  }
+  .p-galleria-inset-indicators.p-galleria-indicators-bottom
+    .p-galleria-indicator-list {
+    background: none !important;
+  }
+  .p-galleria-items-container, .p-galleria-content{
+    height: 100% !important;
+  }
+}
+.banner {
+  display: flex;
+  gap: 50px;
+  .info {
+    padding-top: 63px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    h1 {
+      color: #000;
+      font-size: 54px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 63px; /* 116.667% */
+    }
+    p {
+      color: #000;
+      font-family: "Noto Sans";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    button {
+      display: flex;
+      width: 152px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #000;
+      border-radius: 0px;
+    }
+  }
+  .card {
+    //width: 730px;
+    height: 575px;
+  }
+}
+.projects {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  .heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    h2 {
+      flex: 1;
+      color: #000;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 64px;
+      p {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      a {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .pr-content {
+    .grid {
+      display: grid;
+      grid-auto-rows: auto;
+      gap: 23px;
+
+      grid-row-gap: 40px;
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        flex: 1 0 0;
+        cursor: pointer;
+        .image {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 300px;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 32px;
+          align-self: stretch;
+        }
+      }
+    }
+
+    /* First row (2 columns) */
+    .grid > div:nth-child(1),
+    .grid > div:nth-child(2) {
+      grid-column: span 6; /* 2 items on a 12-column grid */
+    }
+
+    /* Second row (3 columns) */
+    .grid > div:nth-child(3),
+    .grid > div:nth-child(4),
+    .grid > div:nth-child(5) {
+      grid-column: span 4;
+    }
+
+    /* Third row (2 columns again) */
+    .grid > div:nth-child(6),
+    .grid > div:nth-child(7) {
+      grid-column: span 6;
+    }
+
+    /* Define a 12-column layout */
+    .grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
+.innovations {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("https://gerkoblob.blob.core.windows.net/images/25b893ea-7f0c-4b1b-8cfb-2a2126dc836018080dd9463074e337b50262844ca8d750654793%20%281%29.webp")
+      lightgray 50% / cover no-repeat;
+  //background-image: url();
+  //background-repeat: round;
+  //background-size: cover;
+  position: relative;
+  height: 463px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .items {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    p {
+      color: #fff;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+}
+.about {
+  padding: 100px 80px;
+  .inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    justify-content: space-between;
+    border-bottom: 1px solid #b2b3b7;
+    padding-bottom: 54px;
+    .text {
+      max-width: 660px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      h3 {
+        color: #000;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      p {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      button {
+        display: flex;
+        width: 152px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #000;
+        border-radius: 0;
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+    .items {
+      display: flex;
+      width: 435px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      flex-shrink: 0;
+      .item {
+        display: flex;
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+        background: #b2b3b7;
+        p {
+          color: #000;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        span {
+          color: #000;
+          font-family: "Noto Sans";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+.news {
+  padding: 0 80px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  .heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    h2 {
+      flex: 1;
+      color: #000;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 64px;
+      p {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      a {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .pr-content {
+    .grid {
+      display: grid;
+      grid-auto-rows: auto;
+      gap: 23px;
+
+      grid-row-gap: 40px;
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        flex: 1 0 0;
+        cursor: pointer;
+        .image {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 300px;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 32px;
+          align-self: stretch;
+        }
+      }
+    }
+
+    /* First row (2 columns) */
+    .grid > div:nth-child(1),
+    .grid > div:nth-child(2),
+    .grid > div:nth-child(3) {
+      grid-column: span 4; /* 2 items on a 12-column grid */
+    }
+
+    /* Second row (3 columns) */
+  }
+  .grid > div:nth-child(4) {
+    grid-column: span 6;
+    img{
+      height: 320px !important;
+    }
+  }
+
+  .grid > div:nth-child(5),
+  .grid > div:nth-child(6) {
+    grid-column: span 3;
+    img{
+      height: 230px !important;
+    }
+  }
+
+  /* Define a 12-column layout */
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
