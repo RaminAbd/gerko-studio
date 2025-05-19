@@ -41,7 +41,7 @@
       autoplayInterval="5000"
     >
       <ng-template pTemplate="item" let-item>
-        <a class="item" style="height: 100%;">
+        <a class="item" style="height: 100%">
           <img
             class="carousel-image"
             [src]="item.url"
@@ -212,19 +212,16 @@
   </div>
   <div class="pr-content">
     <div class="grid">
-      <div class="item" *ngFor="let item of projects">
+      <div class="item" *ngFor="let item of news">
         <div class="image">
           <img [src]="item.image" alt="" />
         </div>
         <div class="info">
           <div class="name">
-            <p>{{ item.name }}</p>
+            <p>{{ item.title }}</p>
           </div>
           <div class="descr">
-            <p>
-              A minimalist cliffside residence overlooking the Black Sea,
-              designed to blur the boundary between indoor and outdoor living.
-            </p>
+            <p [innerHTML]="item.shortDescription"></p>
           </div>
           <div class="icon">
             <svg

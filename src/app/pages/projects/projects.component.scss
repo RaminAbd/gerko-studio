@@ -1,0 +1,124 @@
+.projects {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  .heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    h2 {
+      flex: 1;
+      color: #000;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      max-width: calc(50% - 12.5px);
+    }
+    .txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 64px;
+      max-width: 434px;
+      p {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      a {
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .pr-content {
+    .grid {
+      display: grid;
+      grid-auto-rows: auto;
+      gap: 23px;
+
+      grid-row-gap: 40px;
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        flex: 1 0 0;
+        cursor: pointer;
+        .image {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 300px;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 32px;
+          align-self: stretch;
+        }
+      }
+    }
+    .grid > div{
+      grid-column: span 4;
+    }
+    /* First row (2 columns) */
+    .grid > div:nth-child(1),
+    .grid > div:nth-child(2) {
+      grid-column: span 6; /* 2 items on a 12-column grid */
+    }
+
+    /* Second row (3 columns) */
+    .grid > div:nth-child(3),
+    .grid > div:nth-child(4),
+    .grid > div:nth-child(5) {
+      grid-column: span 4;
+    }
+
+    .grid > div:nth-child(8) {
+      grid-column: span 6;
+      img{
+        height: 320px !important;
+      }
+    }
+
+    .grid > div:nth-child(6),
+    .grid > div:nth-child(7) {
+      grid-column: span 3;
+      img{
+        height: 230px !important;
+      }
+    }
+
+
+    /* Third row (2 columns again) */
+    .grid > div:nth-child(9),
+    .grid > div:nth-child(10) {
+      grid-column: span 6;
+    }
+
+    /* Define a 12-column layout */
+    .grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}

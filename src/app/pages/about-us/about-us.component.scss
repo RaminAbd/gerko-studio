@@ -1,0 +1,78 @@
+.wrapper {
+  padding: 40px 80px 120px;
+  .story {
+    display: flex;
+    gap: 45px;
+    align-items: center;
+    .txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      h2 {
+        color: #000;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        p {
+          color: #000;
+          font-family: "Noto Sans";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+    .image {
+      flex: 1;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .founders {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-top: 80px;
+    h2 {
+      color: #000;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .items {
+      display: flex;
+      gap: 24px;
+      .image {
+        flex: 1px;
+        img {
+          width: 100%;
+        }
+      }
+      .txt{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        p{
+          color: #000;
+          font-family: "Noto Sans";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
