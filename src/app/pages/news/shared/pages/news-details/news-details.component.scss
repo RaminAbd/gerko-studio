@@ -1,0 +1,122 @@
+.wrapper {
+  .first {
+    position: relative;
+
+    .back {
+      position: absolute;
+      top: 80px;
+      left: 80px;
+
+      button {
+        display: flex;
+        width: 152px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #fff;
+        background: transparent !important;
+        border-radius: 0 !important;
+        color: #fff;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+
+    .image {
+      img {
+        height: 100%;
+        width: 100%;
+        max-height: 536px;
+        object-fit: cover;
+      }
+    }
+  }
+  .second{
+    padding: 64px 80px;
+    display: flex;
+    gap: 60px;
+    .left{
+      flex: 1;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      h1{
+        color: #000;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        max-width: 530px;
+      }
+      p{
+        color: #000;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+    .right{
+      flex: 1;
+      ::ng-deep p {
+        width: 100%;
+        word-break: break-word;
+        font-style: normal;
+        font-weight: 400;
+        color: #000;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        ::ng-deep strong {
+          font-size: 22px;
+        }
+        ::ng-deep a {
+          color: #333;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: auto;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+  }
+  .third{
+    padding: 0 80px 64px;
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+      gap: 0px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0px;
+      height: 482px;
+    }
+    .image-grid img:first-child {
+      grid-column: span 2;
+      height: 702px;
+      img{
+
+      }
+    }
+  }
+}

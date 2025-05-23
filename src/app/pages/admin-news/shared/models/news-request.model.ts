@@ -6,4 +6,5 @@ export class NewsRequestModel {
   description:  MultilingualNameModel = new MultilingualNameModel();
   shortDescription:  MultilingualNameModel = new MultilingualNameModel();
   image?: any;
+  date:string
 }

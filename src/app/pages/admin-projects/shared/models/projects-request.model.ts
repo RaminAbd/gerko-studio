@@ -6,6 +6,7 @@ export class ProjectsRequestModel {
   images: any[];
   name: MultilingualNameModel = new MultilingualNameModel();
   description: MultilingualNameModel = new MultilingualNameModel();
+  shortDescription: MultilingualNameModel = new MultilingualNameModel();
   image: FileModel = new FileModel();
   statusId?: any;
   typeId?: any;
@@ -17,4 +18,5 @@ export class ProjectsRequestModel {
   latitude: number;
   longitude: number;
   fakeFile:FileModel = new FileModel();
+  date:any;
 }

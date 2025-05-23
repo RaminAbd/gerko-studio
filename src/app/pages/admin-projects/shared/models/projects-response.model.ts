@@ -1,16 +1,18 @@
 export class ProjectsResponseModel {
-  id?: any;
-  images: any[];
-  name: string
-  description: string
-  image: string
-  statusId?: any;
-  typeId?: any;
-  client?: any;
+  id: string;
+  images: string[];
+  name: string;
+  description: string;
+  image: string;
+  status: string;
+  type: string;
+  client: string;
   clientEnabled: boolean;
   size?: any;
   sizeEnabled: boolean;
-  address?: any;
+  address: string;
   latitude: number;
   longitude: number;
+  shortDescription:string;
+  date:any;
 }

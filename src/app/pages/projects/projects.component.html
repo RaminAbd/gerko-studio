@@ -12,13 +12,14 @@
   </div>
   <div class="pr-content">
     <div class="grid">
-      <div class="item" *ngFor="let item of projects">
+      <div class="item" *ngFor="let item of projects" [routerLink]="item.id">
         <div class="image">
           <img [src]="item.image" alt="" />
         </div>
         <div class="info">
           <div class="name">
             <p>{{ item.name }}</p>
+            <p>{{item.date | date :"YYYY"}}</p>
           </div>
           <div class="descr">
             <p>

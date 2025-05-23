@@ -51,7 +51,14 @@
           accept="image/*"
         />
       </div>
-      <div class="input-item"></div>
+      <div class="input-item">
+        <label>Date</label>
+        <p-datepicker
+          [style]="{ width: '100%' }"
+          class="max-w-full"
+          [(ngModel)]="date"
+        />
+      </div>
     </div>
     <div class="row1">
       <div class="input-item" *ngFor="let item of request.title.items">

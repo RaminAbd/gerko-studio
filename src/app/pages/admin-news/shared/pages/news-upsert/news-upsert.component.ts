@@ -8,6 +8,7 @@ import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {CustomEditorComponent} from '../../../../../components/custom-editor/custom-editor.component';
 import { Location  } from '@angular/common';
+import {DatePicker} from 'primeng/datepicker';
 @Component({
   selector: 'app-news-upsert',
   imports: [
@@ -17,7 +18,9 @@ import { Location  } from '@angular/common';
     FormsModule,
     NgIf,
     NgForOf,
-    CustomEditorComponent
+    CustomEditorComponent,
+    DatePicker,
+
   ],
   templateUrl: './news-upsert.component.html',
   styleUrl: './news-upsert.component.scss'
@@ -29,7 +32,7 @@ export class NewsUpsertComponent {
   id = this.route.snapshot.paramMap.get('id') as string;
   request: NewsRequestModel = new NewsRequestModel();
   isSubmitted: boolean = false;
-
+  date:any;
   constructor() {
     this.service.component = this;
     this.service.getInfo();

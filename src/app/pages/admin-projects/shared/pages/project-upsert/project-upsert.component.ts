@@ -10,6 +10,7 @@ import {UpsertHeadingComponent} from '../../../../../components/upsert-heading/u
 import {ProjectStatusesResponseModel} from '../../../../project-statuses/shared/models/project-statuses-response.model';
 import {ProjectTypesResponseModel} from '../../../../project-types/shared/models/project-types-response.model';
 import {DropdownModule} from 'primeng/dropdown';
+import {DatePicker} from 'primeng/datepicker';
 
 @Component({
   selector: 'app-project-upsert',
@@ -22,7 +23,8 @@ import {DropdownModule} from 'primeng/dropdown';
     UpsertHeadingComponent,
     FormsModule,
     NgClass,
-    DropdownModule
+    DropdownModule,
+    DatePicker
   ],
   templateUrl: './project-upsert.component.html',
   styleUrl: './project-upsert.component.scss'
@@ -36,7 +38,7 @@ export class ProjectUpsertComponent {
   statuses:ProjectStatusesResponseModel[]=[]
   types:ProjectTypesResponseModel[]=[]
   isSubmitted: boolean = false;
-
+  date:any;
   constructor() {
     this.service.component = this;
     this.service.getStatuses();

@@ -14,9 +14,7 @@
           for="file"
           [class.invalid]="!request.image.fileUrl && isSubmitted"
         >
-          <p
-            *ngIf="!request.image.fileUrl && !request.image.fileLoading"
-          >
+          <p *ngIf="!request.image.fileUrl && !request.image.fileLoading">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="200"
@@ -36,9 +34,7 @@
             *ngIf="request.image.fileLoading"
             class="pi pi-spin pi-spinner"
           ></i>
-          <p
-            *ngIf="request.image.fileUrl && !request.image.fileLoading"
-          >
+          <p *ngIf="request.image.fileUrl && !request.image.fileLoading">
             {{ getFileName(request.image.fileName) }}
           </p>
         </label>
@@ -51,7 +47,7 @@
           accept="image/*"
         />
       </div>
-      <div class="input-item" >
+      <div class="input-item">
         <label for="type">{{ "Type" }}</label>
         <p-dropdown
           [style]="{ width: '100%', height: '40px' }"
@@ -62,7 +58,7 @@
           id="type"
         ></p-dropdown>
       </div>
-      <div class="input-item" >
+      <div class="input-item">
         <label for="status">{{ "Status" }}</label>
         <p-dropdown
           [style]="{ width: '100%', height: '40px' }"
@@ -73,7 +69,7 @@
           id="status"
         ></p-dropdown>
       </div>
-      <div class="input-item" >
+      <div class="input-item">
         <label>{{ "Address" | translate }}</label>
         <input
           type="text"
@@ -83,7 +79,7 @@
       </div>
     </div>
     <div class="row1">
-      <div class="input-item" >
+      <div class="input-item">
         <label>{{ "Client" | translate }}</label>
         <input
           type="text"
@@ -91,15 +87,15 @@
           placeholder="{{ 'Client' | translate }}"
         />
       </div>
-      <div class="input-item" >
+      <div class="input-item">
         <label>{{ "Size" | translate }}</label>
         <input
-          type="text"
+          type="number"
           [(ngModel)]="request.size"
           placeholder="{{ 'Size' | translate }}"
         />
       </div>
-      <div class="input-item" >
+      <div class="input-item">
         <label>{{ "Latitude" | translate }}</label>
         <input
           type="number"
@@ -107,7 +103,7 @@
           placeholder="{{ 'Latitude' | translate }}"
         />
       </div>
-      <div class="input-item" >
+      <div class="input-item">
         <label>{{ "Longitude" | translate }}</label>
         <input
           type="number"
@@ -117,15 +113,31 @@
       </div>
     </div>
     <div class="row1">
-      <div class="remember input-item" style="flex-direction: row">
-        <input type="checkbox" id="clientEnabled" [(ngModel)]="request.clientEnabled" />
-        <label for="clientEnabled">{{ 'Show Client Info' | translate }}</label>
+      <div class="input-item">
+        <label>Build date</label>
+        <p-datepicker
+          [style]="{ width: '100%' }"
+          class="max-w-full"
+          [(ngModel)]="date"
+          view="year" dateFormat="yy"
+        />
       </div>
       <div class="remember input-item" style="flex-direction: row">
-        <input type="checkbox" id="sizeEnabled" [(ngModel)]="request.sizeEnabled" />
-        <label for="sizeEnabled">{{ 'Show Size Info' | translate }}</label>
+        <input
+          type="checkbox"
+          id="clientEnabled"
+          [(ngModel)]="request.clientEnabled"
+        />
+        <label for="clientEnabled">{{ "Show Client Info" | translate }}</label>
       </div>
-      <div class="input-item"></div>
+      <div class="remember input-item" style="flex-direction: row">
+        <input
+          type="checkbox"
+          id="sizeEnabled"
+          [(ngModel)]="request.sizeEnabled"
+        />
+        <label for="sizeEnabled">{{ "Show Size Info" | translate }}</label>
+      </div>
       <div class="input-item"></div>
     </div>
     <div class="row1">
@@ -178,6 +190,15 @@
       </div>
     </div>
     <div class="row1">
+      <div class="input-item" *ngFor="let ed of request.shortDescription.items">
+        <label>Short description ( {{ ed.languageName }} ) </label>
+        <app-custom-editor
+          [value]="ed.value"
+          (changedValue)="ed.value = $event"
+        ></app-custom-editor>
+      </div>
+    </div>
+    <div class="row1">
       <div class="input-item" *ngFor="let ed of request.description.items">
         <label>Description ( {{ ed.languageName }} ) </label>
         <app-custom-editor
@@ -187,9 +208,9 @@
       </div>
     </div>
     <div class="image-list">
-      <div class="item" *ngFor="let item of request.images;let i = index;">
-        <img class="main-image" [src]="item.fileUrl" alt="">
-        <img src="delete.svg" alt="" (click)="removeImage(i)" class="remove">
+      <div class="item" *ngFor="let item of request.images; let i = index">
+        <img class="main-image" [src]="item.fileUrl" alt="" />
+        <img src="delete.svg" alt="" (click)="removeImage(i)" class="remove" />
       </div>
     </div>
   </div>

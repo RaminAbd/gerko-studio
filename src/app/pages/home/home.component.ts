@@ -4,10 +4,12 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ProjectsResponseModel } from '../admin-projects/shared/models/projects-response.model';
 import { HomeService } from './home.service';
 import {NewsResponseModel} from '../admin-news/shared/models/news-response.model';
+import {ScrollerComponent} from './shared/scroller/scroller.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [TranslatePipe, GalleriaModule],
+  imports: [TranslatePipe, GalleriaModule, ScrollerComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

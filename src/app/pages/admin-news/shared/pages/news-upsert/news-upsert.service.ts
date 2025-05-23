@@ -1,20 +1,20 @@
-import {inject, Injectable} from '@angular/core';
-import {NewsApiService} from '../../services/news.api.service';
-import {TranslateService} from '@ngx-translate/core';
-import {BlobService} from '../../../../../core/services/blob.service';
-import {ApplicationMessageCenterService} from '../../../../../core/services/ApplicationMessageCenter.service';
-import {NewsUpsertComponent} from './news-upsert.component';
-import {FileModel} from '../../../../../core/models/File.model';
+import { inject, Injectable } from '@angular/core';
+import { NewsApiService } from '../../services/news.api.service';
+import { TranslateService } from '@ngx-translate/core';
+import { BlobService } from '../../../../../core/services/blob.service';
+import { ApplicationMessageCenterService } from '../../../../../core/services/ApplicationMessageCenter.service';
+import { NewsUpsertComponent } from './news-upsert.component';
+import { FileModel } from '../../../../../core/models/File.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NewsUpsertService {
   private service: NewsApiService = inject(NewsApiService);
   private translate: TranslateService = inject(TranslateService);
   private blob: BlobService = inject(BlobService);
   private message: ApplicationMessageCenterService = inject(
-    ApplicationMessageCenterService,
+    ApplicationMessageCenterService
   );
   component: NewsUpsertComponent;
   constructor() {}
@@ -40,6 +40,9 @@ export class NewsUpsertService {
       .subscribe((resp) => {
         this.component.request = resp.data;
         console.log(this.component.request);
+        if (resp.data.date) {
+          this.component.date = new Date(resp.data.date);
+        }
       });
   }
 
@@ -55,6 +58,10 @@ export class NewsUpsertService {
   }
 
   save() {
+    if (this.component.date) {
+      const publishTime = new Date(structuredClone(this.component.date));
+      this.component.request.date = publishTime.toISOString();
+    }
     if (this.component.id === 'create') {
       this.create();
     } else {
@@ -63,20 +70,24 @@ export class NewsUpsertService {
   }
 
   private create() {
-    this.service.Create(this.service.serviceUrl, this.component.request).subscribe((resp) => {
-      if (resp.succeeded) {
-        this.component.location.back();
-        this.message.showSuccessMessage('Success', 'Created successfully!');
-      }
-    });
+    this.service
+      .Create(this.service.serviceUrl, this.component.request)
+      .subscribe((resp) => {
+        if (resp.succeeded) {
+          this.component.location.back();
+          this.message.showSuccessMessage('Success', 'Created successfully!');
+        }
+      });
   }
 
   private update() {
-    this.service.Update(this.service.serviceUrl, this.component.request).subscribe((resp) => {
-      if (resp.succeeded) {
-        this.component.location.back();
-        this.message.showSuccessMessage('Success', 'Updated successfully!');
-      }
-    });
+    this.service
+      .Update(this.service.serviceUrl, this.component.request)
+      .subscribe((resp) => {
+        if (resp.succeeded) {
+          this.component.location.back();
+          this.message.showSuccessMessage('Success', 'Updated successfully!');
+        }
+      });
   }
 }

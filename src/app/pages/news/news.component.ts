@@ -3,12 +3,14 @@ import { NewsResponseModel } from '../admin-news/shared/models/news-response.mod
 import { NewsService } from './news.service';
 import {NgForOf} from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-news',
   imports: [
     NgForOf,
-    TranslatePipe
+    TranslatePipe,
+    RouterLink
   ],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
