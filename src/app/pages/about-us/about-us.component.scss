@@ -1,9 +1,15 @@
 .wrapper {
   padding: 40px 80px 120px;
+  @media (max-width: 768px) {
+    padding: 40px 20px 120px;
+  }
   .story {
     display: flex;
     gap: 45px;
     align-items: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     .txt {
       flex: 1;
       display: flex;
@@ -16,6 +22,9 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media (max-width: 768px) {
+          font-size: 26px;
+        }
       }
       .description {
         display: flex;
@@ -28,13 +37,22 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
     }
     .image {
       flex: 1;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
       img {
         width: 100%;
+        @media (max-width: 768px) {
+          max-height: 269px;
+        }
       }
     }
   }
@@ -43,16 +61,26 @@
     flex-direction: column;
     gap: 64px;
     margin-top: 80px;
+    @media (max-width: 768px) {
+      margin-top: 40px;
+      gap:24px
+    }
     h2 {
       color: #000;
       font-size: 40px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media (max-width: 768px) {
+        font-size: 26px;
+      }
     }
     .items {
       display: flex;
       gap: 24px;
+      @media (max-width: 768px) {
+        display: none;
+      }
       .image {
         flex: 1px;
         img {
@@ -75,4 +103,45 @@
       }
     }
   }
+}
+.mob{
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+  .text-wrap {
+    max-width: 800px;
+    //margin: 40px auto;
+    color: #000;
+    font-family: "Noto Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .float-img {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .float-img-right {
+    float: right;
+    margin-left: 20px;
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .text-wrap::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 }

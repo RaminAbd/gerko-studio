@@ -55,25 +55,28 @@
     <div class="nav-links">
       <div class="nav">
         <ul>
-          <li>
-            <a href="#first" aria-label="home" (click)="closeBurger()">{{
-                "Home" | translate
+          <li (click)="toggleMenu()">
+            <a routerLink="projects" [routerLinkActive]="['active']" aria-label="projects" >{{
+                "Projects" | translate
               }}</a>
           </li>
-          <li>
-            <a href="#fourth" aria-label="services" (click)="closeBurger()">{{
-                "Services" | translate
+          <li (click)="toggleMenu()">
+            <a routerLink="about" [routerLinkActive]="['active']" aria-label="about">{{
+                "About" | translate
               }}</a>
           </li>
-          <li>
-            <a href="#fifth" aria-label="packages" (click)="closeBurger()">{{
-                "Packages" | translate
+          <li (click)="toggleMenu()">
+            <a routerLink="news" [routerLinkActive]="['active']" aria-label="news">{{
+                "News" | translate
               }}</a>
           </li>
-          <li>
-            <a href="#sixth" aria-label="contact" (click)="closeBurger()">{{
-                "Contact Us" | translate
+          <li (click)="toggleMenu()">
+            <a routerLink="contact" [routerLinkActive]="['active']" aria-label="contact">{{
+                "Contact" | translate
               }}</a>
+          </li>
+          <li >
+            <a (click)="selectLang(selectedLang === 'ka-Geo' ? 'en-Us' : 'ka-Geo')">{{ selectedLang | translate }}</a>
           </li>
         </ul>
       </div>

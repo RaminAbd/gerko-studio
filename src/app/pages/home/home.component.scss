@@ -16,18 +16,35 @@
 .banner {
   display: flex;
   gap: 50px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  @media (max-width: 768px) {
+    gap:35px;
+  }
   .info {
     padding-top: 63px;
     padding-left: 80px;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    @media (max-width: 1024px) {
+      padding: 20px 0;
+    }
+    @media (max-width: 768px) {
+      gap:27px;
+    }
     h1 {
       color: #000;
       font-size: 54px;
       font-style: normal;
       font-weight: 700;
       line-height: 63px; /* 116.667% */
+      @media (max-width: 768px) {
+        font-size: 25px;
+        line-height: 43px;
+      }
     }
     p {
       color: #000;
@@ -51,6 +68,9 @@
   .card {
     //width: 730px;
     height: 575px;
+    @media (max-width: 768px) {
+      height: 250px;
+    }
   }
 }
 .projects {
@@ -58,10 +78,16 @@
   display: flex;
   flex-direction: column;
   gap: 23px;
+  @media (max-width: 1024px) {
+    padding: 60px 20px;
+  }
   .heading {
     display: flex;
     align-items: flex-start;
     gap: 24px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     h2 {
       flex: 1;
       color: #000;
@@ -69,6 +95,9 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media (max-width: 768px) {
+        font-size: 26px;
+      }
     }
     .txt {
       flex: 1;
@@ -76,6 +105,9 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 64px;
+      @media (max-width: 768px) {
+        gap: 40px;
+      }
       p {
         color: #000;
         font-family: "Noto Sans";
@@ -83,6 +115,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
       }
       a {
         color: #000;
@@ -108,6 +144,7 @@
       gap: 23px;
 
       grid-row-gap: 40px;
+
       .item {
         display: flex;
         flex-direction: column;
@@ -120,6 +157,9 @@
           img {
             width: 100%;
             height: 300px;
+            @media (max-width: 768px) {
+              height: 120px;
+            }
           }
         }
         .info {
@@ -128,6 +168,9 @@
           align-items: flex-start;
           gap: 32px;
           align-self: stretch;
+          @media (max-width: 768px) {
+            gap:24px;
+          }
           .name{
             display: flex;
             justify-content: space-between;
@@ -142,7 +185,7 @@
               text-transform: uppercase;
             }
           }
-          .descr{
+          .descr {
             p{
               color: #000;
               font-family: "Noto Sans";
@@ -150,9 +193,48 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media (max-width: 768px) {
+                font-size: 14px;
+              }
+            }
+            ::ng-deep p {
+              width: 100%;
+              word-break: break-word;
+              color: #000;
+              font-family: "Noto Sans";
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal; /* 177.778% */
+              ::ng-deep strong {
+                font-size: 22px;
+              }
+              ::ng-deep a {
+                color: #333;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 32px;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+                text-underline-position: from-font;
+              }
             }
           }
         }
+        &:first-child {
+          @media (max-width: 768px) {
+            .image{
+              img{
+                height: 174px;
+              }
+            }
+          }
+        }
+
       }
     }
 
@@ -160,6 +242,9 @@
     .grid > div:nth-child(1),
     .grid > div:nth-child(2) {
       grid-column: span 6; /* 2 items on a 12-column grid */
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
     }
 
     /* Second row (3 columns) */
@@ -167,17 +252,33 @@
     .grid > div:nth-child(4),
     .grid > div:nth-child(5) {
       grid-column: span 4;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
     }
 
     /* Third row (2 columns again) */
     .grid > div:nth-child(6),
     .grid > div:nth-child(7) {
       grid-column: span 6;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
+    }
+
+    .grid > div:nth-child(1){
+      @media (max-width: 768px) {
+        grid-column: span 2;
+      }
     }
 
     /* Define a 12-column layout */
     .grid {
       grid-template-columns: repeat(12, 1fr);
+      @media (max-width: 768px) {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr
+      }
     }
   }
 }
@@ -197,6 +298,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 768px) {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url("https://gerkoblob.blob.core.windows.net/images/25b893ea-7f0c-4b1b-8cfb-2a2126dc836018080dd9463074e337b50262844ca8d750654793%20%281%29.webp") lightgray 0px -41.5px / 100% 163.265% no-repeat;
+    height: 147px;
+  }
+  .logo{
+    svg{
+      @media (max-width: 768px) {
+        height: 55px;
+      }
+    }
+  }
   .items {
     position: absolute;
     bottom: 25px;
@@ -205,6 +317,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 80px;
+    @media (max-width: 1024px) {
+      padding: 0 20px;
+
+    }
     p {
       color: #fff;
       font-size: 32px;
@@ -212,11 +328,17 @@
       font-weight: 700;
       line-height: normal;
       text-transform: uppercase;
+      @media (max-width: 768px) {
+        font-size: 10px;
+      }
     }
   }
 }
 .about {
   padding: 100px 80px;
+  @media (max-width: 1024px) {
+    padding: 60px 20px;
+  }
   .inner {
     display: flex;
     align-items: flex-start;
@@ -224,18 +346,28 @@
     justify-content: space-between;
     border-bottom: 1px solid #b2b3b7;
     padding-bottom: 54px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 48px;
+    }
     .text {
       max-width: 660px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 40px;
+      @media (max-width: 768px) {
+        gap: 32px;
+      }
       h3 {
         color: #000;
         font-size: 40px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media (max-width: 768px) {
+          font-size: 24px;
+        }
       }
       p {
         color: #000;
@@ -270,6 +402,9 @@
       align-items: flex-start;
       gap: 16px;
       flex-shrink: 0;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
       .item {
         display: flex;
         padding: 24px;
@@ -278,6 +413,10 @@
         gap: 24px;
         align-self: stretch;
         background: #b2b3b7;
+        @media (max-width: 768px) {
+          padding: 20px;
+          gap: 16px;
+        }
         p {
           color: #000;
           font-size: 14px;
@@ -293,6 +432,9 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -303,17 +445,27 @@
   display: flex;
   flex-direction: column;
   gap: 23px;
+  @media (max-width: 1024px) {
+    padding: 0 20px 60px;
+  }
   .heading {
     display: flex;
     align-items: flex-start;
     gap: 24px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     h2 {
+
       flex: 1;
       color: #000;
       font-size: 40px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media (max-width: 768px) {
+        font-size: 26px;
+      }
     }
     .txt {
       flex: 1;
@@ -321,6 +473,9 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 64px;
+      @media (max-width: 768px) {
+        gap: 40px;
+      }
       p {
         color: #000;
         font-family: "Noto Sans";
@@ -328,6 +483,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
       }
       a {
         color: #000;
@@ -365,6 +523,9 @@
           img {
             width: 100%;
             height: 300px;
+            @media (max-width: 768px) {
+              height: 120px;
+            }
           }
         }
         .info {
@@ -373,6 +534,9 @@
           align-items: flex-start;
           gap: 32px;
           align-self: stretch;
+          @media (max-width: 768px) {
+            gap:24px;
+          }
           .name{
             display: flex;
             justify-content: space-between;
@@ -396,6 +560,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media (max-width: 768px) {
+                font-size: 14px;
+              }
             }
             ::ng-deep p {
               width: 100%;
@@ -425,6 +592,15 @@
             }
           }
         }
+        &:first-child {
+          @media (max-width: 768px) {
+            .image{
+              img{
+                height: 174px;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -433,28 +609,52 @@
     .grid > div:nth-child(2),
     .grid > div:nth-child(3) {
       grid-column: span 4; /* 2 items on a 12-column grid */
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
     }
 
     /* Second row (3 columns) */
   }
   .grid > div:nth-child(4) {
     grid-column: span 6;
+    @media (max-width: 768px) {
+      grid-column: auto;
+    }
     img{
       height: 320px !important;
+      @media (max-width: 768px) {
+        height: 120px !important;
+      }
     }
   }
 
   .grid > div:nth-child(5),
   .grid > div:nth-child(6) {
     grid-column: span 3;
+    @media (max-width: 768px) {
+      grid-column: auto;
+    }
     img{
       height: 230px !important;
+      @media (max-width: 768px) {
+        height: 120px !important;
+      }
     }
   }
 
+  .grid > div:nth-child(1){
+    @media (max-width: 768px) {
+    grid-column: span 2 !important;
+    }
+  }
   /* Define a 12-column layout */
   .grid {
     grid-template-columns: repeat(12, 1fr);
+    @media (max-width: 768px) {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr
+    }
   }
 }
 

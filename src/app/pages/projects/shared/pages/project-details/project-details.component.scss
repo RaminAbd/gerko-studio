@@ -5,6 +5,10 @@
       position: absolute;
       top: 80px;
       left: 80px;
+      @media (max-width: 768px) {
+        top: 20px;
+        left: 20px;
+      }
       button {
         display: flex;
         width: 152px;
@@ -39,12 +43,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
+    @media (max-width: 768px) {
+      padding: 40px 20px;
+      gap: 24px;
+    }
     h1 {
       color: #000;
       font-size: 80px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
     }
 
     ::ng-deep p {
@@ -61,6 +72,9 @@
       display: flex;
       flex-direction: column;
       gap: 7px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
       ::ng-deep strong {
         font-size: 22px;
       }
@@ -85,6 +99,11 @@
     gap: 25px;
     padding: 20px 80px;
     width: 100%;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 20px 20px;
+      gap: 40px;
+    }
     .txt{
       flex:1;
       p{
@@ -94,6 +113,12 @@
         font-weight: 500;
         line-height: normal;
         max-width: 435px;
+        @media (max-width: 768px) {
+          font-size: 18px;
+          max-width:100%;
+          line-height: 32px;
+        }
+
       }
       ::ng-deep p {
         width: 100%;
@@ -110,6 +135,11 @@
         display: flex;
         flex-direction: column;
         gap: 7px;
+        @media (max-width: 768px) {
+          font-size: 18px;
+          max-width:100%;
+          line-height: 32px;
+        }
         ::ng-deep strong {
           font-size: 22px;
         }
@@ -136,12 +166,18 @@
       align-items: flex-start;
       gap: 39px;
       width: 100%;
+      @media (max-width: 768px) {
+        gap: 20px;
+      }
       h3{
         color: #000;
         font-size: 40px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: 768px) {
+          font-size: 24px;
+        }
       }
       .items{
         display: flex;
@@ -164,6 +200,9 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media (max-width: 768px) {
+              font-size: 14px;
+            }
           }
           p{
             color: #000;
@@ -177,6 +216,9 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
+            @media (max-width: 768px) {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -187,16 +229,37 @@
     padding: 0 80px 0;
     margin: 120px 0 100px;
     height: 561px;
+    @media (max-width: 768px) {
+      padding: 0 20px 0;
+      margin: 64px 0 32px;
+      height: 220px;
+    }
     .map{
       height: 561px;
+      ::ng-deep .map-container{
+        height: 561px !important;
+      }
+      @media (max-width: 768px) {
+        height: 220px;
+        ::ng-deep .map-container{
+          height: 220px !important;
+        }
+      }
     }
   }
   .fifth{
     padding: 0 80px 93px;
+    @media (max-width: 768px) {
+      padding: 0 20px 93px;
+    }
     .image-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* 2 images per row */
       gap: 24px;
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+      }
     }
 
     .image-grid img {
@@ -204,6 +267,9 @@
       object-fit: cover;
       border-radius: 0px;
       height: 482px;
+      @media (max-width: 768px) {
+        height: 200px;
+      }
     }
 
 
