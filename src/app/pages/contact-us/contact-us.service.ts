@@ -3,6 +3,7 @@ import {AboutUsComponent} from '../about-us/about-us.component';
 import {ApplicationMessageCenterService} from '../../core/services/ApplicationMessageCenter.service';
 import {ContactUsComponent} from './contact-us.component';
 import {ContactRequestModel} from './shared/models/contact-request.model';
+import {EmailsApiService} from './shared/services/emails.api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ContactUsService {
   private message: ApplicationMessageCenterService = inject(
     ApplicationMessageCenterService,
   );
+  private emailsService: EmailsApiService = inject(EmailsApiService);
 
   constructor() {}
 
@@ -39,9 +41,12 @@ export class ContactUsService {
   send() {
     console.log(this.component.request);
     if (this.isValid()) {
-      console.log(this.component.request);
-      this.message.showTranslatedSuccessMessage('Successfully sent!');
-      this.component.request=new ContactRequestModel()
+      this.emailsService.SendEmail(this.component.request).subscribe((resp) => {
+        if (resp.succeeded) {
+          this.message.showTranslatedSuccessMessage('Successfully sent!');
+          this.component.request = new ContactRequestModel();
+        }
+      });
     }
   }
 }

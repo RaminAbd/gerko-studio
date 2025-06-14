@@ -17,6 +17,7 @@ export class ProjectsService {
       .GetAllByLang(this.service.serviceUrl, this.translate.currentLang)
       .subscribe((resp) => {
         this.component.projects = resp.data;
+        console.log(this.component.projects);
       });
   }
 }
