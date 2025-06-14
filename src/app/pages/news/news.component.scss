@@ -3,10 +3,16 @@
   display: flex;
   flex-direction: column;
   gap: 54px;
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
   .heading {
     display: flex;
     align-items: flex-start;
     gap: 24px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     h2 {
       flex: 1;
       color: #000;
@@ -15,6 +21,11 @@
       font-weight: 700;
       line-height: normal;
       max-width: calc(50% - 12.5px);
+      @media (max-width: 768px) {
+        font-size: 26px;
+        width: 100%;
+        max-width:100%;
+      }
     }
     .txt {
       flex: 1;
@@ -23,6 +34,10 @@
       align-items: flex-end;
       gap: 64px;
       max-width: 434px;
+      @media (max-width: 768px) {
+        gap: 40px;
+        max-width: 100%;
+      }
       p {
         color: #000;
         font-family: "Noto Sans";
@@ -30,6 +45,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
       }
       a {
         color: #000;
@@ -67,6 +85,9 @@
           img {
             width: 100%;
             height: 300px;
+            @media (max-width: 768px) {
+              height: 274px;
+            }
           }
         }
         .info {
@@ -75,6 +96,9 @@
           align-items: flex-start;
           gap: 32px;
           align-self: stretch;
+          @media (max-width: 768px) {
+            gap:24px;
+          }
           .name{
             display: flex;
             justify-content: space-between;
@@ -98,6 +122,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media (max-width: 768px) {
+                font-size: 14px;
+              }
             }
             ::ng-deep p {
               width: 100%;
@@ -131,12 +158,21 @@
     }
     .grid > div:nth-child(1) {
       grid-column: span 6;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
       img{
         height: 320px !important;
+        @media (max-width: 768px) {
+          height: 274px !important;
+        }
       }
     }
     .grid > div{
       grid-column: span 4;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
     }
 
     .grid > div:nth-child(2),
@@ -144,18 +180,30 @@
       grid-column: span 3;
       img{
         height: 230px !important;
+        @media (max-width: 768px) {
+          height: 274px !important;
+        }
+      }
+      @media (max-width: 768px) {
+        grid-column: auto;
       }
     }
 
     .grid > div:nth-child(4),
     .grid > div:nth-child(5) {
       grid-column: span 6; /* 2 items on a 12-column grid */
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
     }
     /* First row (2 columns) */
     .grid > div:nth-child(6),
     .grid > div:nth-child(7),
     .grid > div:nth-child(8) {
       grid-column: span 4; /* 2 items on a 12-column grid */
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
     }
 
 
@@ -167,5 +215,9 @@
   /* Define a 12-column layout */
   .grid {
     grid-template-columns: repeat(12, 1fr);
+    @media (max-width: 768px) {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr
+    }
   }
 }

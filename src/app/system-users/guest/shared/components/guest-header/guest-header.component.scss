@@ -140,7 +140,10 @@ nav {
 .logo {
   z-index: 4;
   img{
-    width: 150px;
+    height: 46px;
+    @media (max-width: 768px) {
+      height: 29px;
+    }
   }
 }
 .back {
