@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="first">
     <div class="back">
-      <button>
+      <button (click)="location.back()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"
@@ -86,7 +86,23 @@
   </div>
   <div class="fifth">
     <div class="image-grid">
-      <img *ngFor="let img of response.images" [src]="img" alt="House Image" />
+      <img *ngFor="let img of response.images" style="cursor: pointer" [src]="img" alt="House Image" (click)="openImage(img)"/>
     </div>
   </div>
 </div>
+
+<div
+  class="lightbox-backdrop"
+  *ngIf="showImageLightBox"
+  (click)="closeImageLightbox()"
+  @fadeInOut
+>
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <div class="image" @zoomInOut>
+      <img [src]="selectedImage" alt="Selected Image" />
+    </div>
+    <span class="close-btn" (click)="closeImageLightbox()">&times;</span>
+  </div>
+</div>
+
+<div class="blur" *ngIf="showImageLightBox"></div>
