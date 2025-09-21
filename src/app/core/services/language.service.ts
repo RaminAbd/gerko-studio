@@ -23,11 +23,13 @@ export class LanguageService {
   ) {}
 
   setLangs(): Observable<any> {
-    const azLang$ = this.getLang('az-Aze');
-    return forkJoin([azLang$]).pipe(
-      map(([azLang]) => {
+    const kaLang$ = this.getLang('ka-Geo');
+    const enLang$ = this.getLang('en-Us');
+    return forkJoin([kaLang$,enLang$]).pipe(
+      map(([kaLang$,enLang$]) => {
         const data = {
-          'az-Aze': azLang,
+          'ka-Geo': kaLang$,
+          'en-Us': enLang$,
         };
         this.languagesDataSubject.next(data);
         return data;

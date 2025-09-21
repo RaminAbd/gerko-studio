@@ -3,6 +3,29 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
+@font-face {
+  font-family: "GerkoFont";
+  font-weight: 400;
+  src: url("../public/fonts/NotoSans-Regular_1.ttf");
+}
+@font-face {
+  font-family: "GerkoFont";
+  font-weight: 500;
+  src: url("../public/fonts/NotoSans-Regular_1.ttf");
+}
+@font-face {
+  font-family: "GerkoFont";
+  font-weight: 600;
+  src: url("../public/fonts/NotoSans-Regular_1.ttf");
+}
+@font-face {
+  font-family: "GerkoFont";
+  font-weight: 700;
+  src: url("../public/fonts/Roboto _GEO Mt Bold.ttf");
+}
+
+
+
 * {
   box-sizing: border-box;
   --primary-color: #f90;
@@ -18,7 +41,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", serif;
+  font-family: "GerkoFont", serif;
   //background: #fff;
   //overflow: hidden;
   &.blocked {
@@ -51,7 +74,7 @@ button {
 input,
 textarea {
   outline: none;
-  font-family: "Inter", serif;
+  font-family: "GerkoFont", serif;
   font-style: normal;
   padding: 10px;
   background: var(--grey) !important;
@@ -73,7 +96,7 @@ h1,
 label,
 h2 {
   color: var(--text-color);
-  font-family: "Inter", serif;
+  font-family: "GerkoFont", serif;
   font-style: normal;
   margin: 0 !important;
 }

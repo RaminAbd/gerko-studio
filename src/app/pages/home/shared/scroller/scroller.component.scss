@@ -27,6 +27,9 @@
       animation: scroll var(--_animation-duration, 40s)
       var(--_animation-direction, forwards) linear infinite;
       background: #FFFF00;
+      @media (max-width: 769px) {
+        padding-block: 10px;
+      }
     }
   }
 

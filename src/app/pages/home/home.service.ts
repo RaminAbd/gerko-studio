@@ -19,12 +19,6 @@ export class HomeService {
       .GetAllByLang(this.service.serviceUrl, this.translate.currentLang)
       .subscribe((resp) => {
         this.component.projects = resp.data.splice(0, 5);
-        this.component.projects.forEach((item) => {
-          item.shortDescription = item.shortDescription
-            .replace(/&nbsp;/g, ' ')
-            .replace(/\s+/g, ' ')
-            .trim();
-        });
         console.log(this.component.projects);
       });
   }
