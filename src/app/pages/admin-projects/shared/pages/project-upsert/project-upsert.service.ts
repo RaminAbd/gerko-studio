@@ -68,6 +68,9 @@ export class ProjectUpsertService {
         if (resp.data.date) {
           this.component.date = new Date(resp.data.date);
         }
+        if (resp.data.endDate) {
+          this.component.endDate = new Date(resp.data.endDate);
+        }
       });
   }
 
