@@ -14,9 +14,10 @@ export class ProjectsRequestModel {
   clientEnabled: boolean;
   size?: any;
   sizeEnabled: boolean;
-  address?: any;
+  address: MultilingualNameModel = new MultilingualNameModel();
   latitude: number;
   longitude: number;
   fakeFile:FileModel = new FileModel();
   date:any;
+  endDate: string;
 }

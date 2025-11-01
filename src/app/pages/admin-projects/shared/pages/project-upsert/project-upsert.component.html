@@ -69,14 +69,15 @@
           id="status"
         ></p-dropdown>
       </div>
-      <div class="input-item">
-        <label>{{ "Address" | translate }}</label>
-        <input
-          type="text"
-          [(ngModel)]="request.address"
-          placeholder="{{ 'Address' | translate }}"
-        />
-      </div>
+
+<!--      <div class="input-item">-->
+<!--        <label>{{ "Address" | translate }}</label>-->
+<!--        <input-->
+<!--          type="text"-->
+<!--          [(ngModel)]="request.address"-->
+<!--          placeholder="{{ 'Address' | translate }}"-->
+<!--        />-->
+<!--      </div>-->
     </div>
     <div class="row1">
       <div class="input-item">
@@ -111,6 +112,7 @@
           placeholder="{{ 'Longitude' | translate }}"
         />
       </div>
+
     </div>
     <div class="row1">
       <div class="input-item">
@@ -119,6 +121,15 @@
           [style]="{ width: '100%' }"
           class="max-w-full"
           [(ngModel)]="date"
+          view="year" dateFormat="yy"
+        />
+      </div>
+      <div class="input-item">
+        <label>End date</label>
+        <p-datepicker
+          [style]="{ width: '100%' }"
+          class="max-w-full"
+          [(ngModel)]="endDate"
           view="year" dateFormat="yy"
         />
       </div>
@@ -138,7 +149,7 @@
         />
         <label for="sizeEnabled">{{ "Show Size Info" | translate }}</label>
       </div>
-      <div class="input-item"></div>
+
     </div>
     <div class="row1">
       <div class="input-item file-input">
@@ -172,6 +183,20 @@
           (change)="getFiles($event)"
           multiple="false"
           accept="image/*"
+        />
+      </div>
+    </div>
+    <div class="row1">
+      <div class="input-item" *ngFor="let item of request.address.items">
+        <label>{{ "Address" | translate }} ( {{ item.languageName }} )</label>
+        <input
+          type="text"
+          [ngClass]="{
+            invalid:
+              (!item.isValid && isSubmitted) || (!item.value && isSubmitted)
+          }"
+          [(ngModel)]="item.value"
+          placeholder="{{ item.languageName | translate }}"
         />
       </div>
     </div>

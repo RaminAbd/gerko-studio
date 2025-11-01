@@ -44,6 +44,10 @@
           <label>{{ "Build in" | translate }}</label>
           <p>{{ response.date | date : "YYYY" }}</p>
         </div>
+        <div class="item" *ngIf="response.endDate">
+          <label>{{ "End date" | translate }}</label>
+          <p>{{ response.endDate | date : "YYYY" }}</p>
+        </div>
         <div class="item">
           <label>{{ "Status" | translate }}</label>
           <p>{{ response.status }}</p>

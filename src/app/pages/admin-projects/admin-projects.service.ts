@@ -44,7 +44,7 @@ export class AdminProjectsService {
 
   setCols() {
     this.component.cols = [
-      { field: 'name', header: 'Name' },
+      { field: 'address', header: 'Address' },
       { field: 'crudActions', header: 'Actions' },
     ];
   }

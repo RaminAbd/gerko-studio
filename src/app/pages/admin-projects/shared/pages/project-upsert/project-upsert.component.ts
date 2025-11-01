@@ -39,6 +39,7 @@ export class ProjectUpsertComponent {
   types:ProjectTypesResponseModel[]=[]
   isSubmitted: boolean = false;
   date:any;
+  endDate:any;
   constructor() {
     this.service.component = this;
     this.service.getStatuses();

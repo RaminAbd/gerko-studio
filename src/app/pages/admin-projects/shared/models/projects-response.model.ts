@@ -15,4 +15,5 @@ export class ProjectsResponseModel {
   longitude: number;
   shortDescription:string;
   date:any;
+  endDate: any;
 }
