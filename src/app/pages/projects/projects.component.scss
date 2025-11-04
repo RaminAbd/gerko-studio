@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 54px;
+  min-height: 700px;
   @media (max-width: 768px) {
     padding: 40px 20px;
   }
@@ -174,7 +175,7 @@
     /* First row (2 columns) */
     .grid > div:nth-child(1),
     .grid > div:nth-child(2) {
-      grid-column: span 6; /* 2 items on a 12-column grid */
+      grid-column: span 4; /* 2 items on a 12-column grid */
       @media (max-width: 768px) {
         grid-column: auto;
       }
@@ -191,37 +192,37 @@
     }
 
     .grid > div:nth-child(8) {
-      grid-column: span 6;
+      grid-column: span 4;
       @media (max-width: 768px) {
         grid-column: auto;
       }
-      img{
-        height: 320px !important;
-        @media (max-width: 768px) {
-          height: 274px !important;
-        }
-      }
+      //img{
+      //  height: 320px !important;
+      //  @media (max-width: 768px) {
+      //    height: 274px !important;
+      //  }
+      //}
     }
 
     .grid > div:nth-child(6),
     .grid > div:nth-child(7) {
-      grid-column: span 3;
+      grid-column: span 4;
       @media (max-width: 768px) {
         grid-column: auto;
       }
-      img{
-        height: 230px !important;
-        @media (max-width: 768px) {
-          height: 274px !important;
-        }
-      }
+      //img{
+      //  height: 230px !important;
+      //  @media (max-width: 768px) {
+      //    height: 274px !important;
+      //  }
+      //}
     }
 
 
     /* Third row (2 columns again) */
     .grid > div:nth-child(9),
     .grid > div:nth-child(10) {
-      grid-column: span 6;
+      grid-column: span 4;
       @media (max-width: 768px) {
         grid-column: auto;
       }

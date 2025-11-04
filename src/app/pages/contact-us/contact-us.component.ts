@@ -15,8 +15,8 @@ export class ContactUsComponent {
   request: ContactRequestModel = new ContactRequestModel();
   private service: ContactUsService = inject(ContactUsService);
   center: google.maps.LatLngLiteral = {
-    lat: 41.4878128652745,
-    lng: 44.7982215230508,
+    lat: 41.6875095,
+    lng: 44.8264149,
   };
   constructor() {
     this.service.component = this;

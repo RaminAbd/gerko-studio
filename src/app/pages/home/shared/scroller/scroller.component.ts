@@ -8,10 +8,11 @@ import {
   Renderer2, Inject, PLATFORM_ID,
 } from '@angular/core';
 import {isPlatformBrowser, NgForOf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 @Component({
   selector: 'app-scroller',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf, TranslatePipe],
   templateUrl: './scroller.component.html',
   styleUrl: './scroller.component.scss',
 })

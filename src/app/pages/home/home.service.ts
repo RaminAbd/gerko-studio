@@ -18,8 +18,12 @@ export class HomeService {
     this.service
       .GetAllByLang(this.service.serviceUrl, this.translate.currentLang)
       .subscribe((resp) => {
-        this.component.projects = resp.data.splice(0, 5);
+        this.component.projects = resp.data.splice(0, 6);
         console.log(this.component.projects);
+        this.component.bannerItems = this.component.projects.map((item:any) => ({
+          url:item.image
+        }))
+        console.log(this.component.bannerItems);
       });
   }
 

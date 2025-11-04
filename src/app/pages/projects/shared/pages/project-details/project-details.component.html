@@ -62,7 +62,7 @@
         </div>
         <div class="item">
           <label>{{ "Location" | translate }}</label>
-          <p style="cursor: pointer">
+          <p style="cursor: pointer" (click)="scrollToMap()">
             {{ response.address
             }}<svg
               xmlns="http://www.w3.org/2000/svg"
@@ -81,16 +81,17 @@
       </div>
     </div>
   </div>
-  <div class="fourth">
-    <div class="map">
-      <google-map  width="100%" [center]="center" [zoom]="8">
-        <map-marker [position]="center" title="My Pin"></map-marker>
-      </google-map>
-    </div>
-  </div>
+
   <div class="fifth">
     <div class="image-grid">
-      <img *ngFor="let img of response.images" style="cursor: pointer" [src]="img" alt="House Image" (click)="openImage(img)"/>
+      <img *ngFor="let img of response.images; let i = index" style="cursor: pointer" [src]="img" alt="House Image" (click)="openImageLightbox(i)"/>
+    </div>
+  </div>
+  <div class="fourth">
+    <div class="map" #mapSection>
+      <google-map   width="100%" [center]="center" [zoom]="13"  [options]="mapOptions">
+        <map-marker [position]="center" title="My Pin"></map-marker>
+      </google-map>
     </div>
   </div>
 </div>
@@ -102,11 +103,35 @@
   @fadeInOut
 >
   <div class="lightbox-content" (click)="$event.stopPropagation()">
-    <div class="image" @zoomInOut>
-      <img [src]="selectedImage" alt="Selected Image" />
+    <!-- Left arrow -->
+    <div class="image-content">
+      <button
+        class="nav-arrow left"
+        (click)="prevImage($event)"
+        [disabled]="currentIndex === 0"
+      >
+        &#10094;
+      </button>
+
+      <!-- Image -->
+      <div class="image" @zoomInOut>
+        <img [src]="selectedImage" alt="Selected Image" />
+      </div>
+
+      <!-- Right arrow -->
+      <button
+        class="nav-arrow right"
+        (click)="nextImage($event)"
+        [disabled]="currentIndex === response.images.length - 1"
+      >
+        &#10095;
+      </button>
     </div>
+
+    <!-- Close button -->
     <span class="close-btn" (click)="closeImageLightbox()">&times;</span>
   </div>
 </div>
 
 <div class="blur" *ngIf="showImageLightBox"></div>
+

@@ -19,12 +19,6 @@ export class HomeComponent implements OnDestroy{
   projects: ProjectsResponseModel[] = [];
   news:NewsResponseModel[]=[];
   bannerItems: any[] = [
-    {
-      url: 'https://gerkoblob.blob.core.windows.net/images/28ce3d02-2250-45ec-86bd-628c7f553c37d3f00a9f74f7ada780e8fceb016ff0ae20314a8a%20%281%29.png',
-    },
-    {
-      url: 'https://gerkoblob.blob.core.windows.net/images/28ce3d02-2250-45ec-86bd-628c7f553c37d3f00a9f74f7ada780e8fceb016ff0ae20314a8a%20%281%29.png',
-    },
   ];
   langSubscribtion: any;
   constructor() {

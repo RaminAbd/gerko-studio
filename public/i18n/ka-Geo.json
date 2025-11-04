@@ -30,9 +30,37 @@
   "Our Achievements": "ჩვენი მიღწევები",
   "Our Story": "ჩვენი ისტორია",
   "Founders": "დამფუძნებლები",
-  "Tell us what you need": "გვითხარით, რა გჭირდებათ",
+  "Tell us what you need": "დაგვიტოვეთ შეტყობინება",
   "Full name": "სრული სახელი",
   "Email": "ელ. ფოსტა",
   "Message": "შეტყობინება",
-  "Send Message": "შეტყობინების გაგზავნა"
+  "Send Message": "შეტყობინების გაგზავნა",
+  "AboutUsText": "Gerko Studio არის არქიტექტურული საპროექტო კომპანია, რომელიც დაარსდა თბილისში 2013 წელს მერაბ და გიორგი გამყრელიძეების მიერ.\nსაპროექტო ასრულებს მრავალი ტიპოლოგიის და მასშტაბის პროექტებს, რომლებიც მოიცავს მრავალბინიან საცხოვრებელ სახლებს, მრავალფუნქციურ კომპლექსებს, კერძო სახლებს, სასტუმროებს, ოფისებს, სხვადასხვა ფუნქციის მქონე კომერციულ შენობებს, ასევე მაღალი სიმჭიდროვის მქონე დასახლებებს.\nსაპროექტო ორიენტირებულია ხიდის შექმნაზე დამკვეთსა და გარემოს შორის.",
+
+  "Eileen Gray": "ეილინ გრეი",
+  "To create, one must first question everything.": "რაიმე რომ შექმნათ, ჯერ ყველაფერი უნდა დასვათ კითხვის ნიშნის ქვეშ.",
+
+  "Louis Kahn": "ლუი კანი",
+  "Even a brick wants to be something.": "აგურსაც კი სურს გახდეს რაღაც",
+
+  "Brenda Laurel": "ბრენდა ლოურელი",
+  "A design isn't finished until someone is using it.": "დიზაინი არ არის დასრულებული მანამ, სანამ ვინმე არ გამოიყენებს მას",
+
+  "Johann Wolfgang von Goethe": "იოჰან ვოლფგანგ ფონ გოეთე",
+  "I call architecture frozen music.": "მე არქიტექტურას გაყინულ მუსიკას ვუწოდებ",
+
+  "Augustus W. N. Pugin": "ავგუსტუს ვ. ნ. პიუჯინი",
+  "In pure architecture the smallest detail should have a meaning or serve a purpose.": "სუფთა არქიტექტურაში უმცირეს დეტალსაც უნდა ჰქონდეს მნიშვნელობა ან დანიშნულება",
+
+  "Tadao Ando": "ტადაო ანდო",
+  "I like ruins because what remains is not the total design, but the clarity of thought, the naked structure, the spirit of the thing.": "მომწონს ნანგრევები, რადგან რჩება არა მთლიანი დიზაინი, არამედ აზროვნების სიცხადე, შიშველი სტრუქტურა, ნივთის სული",
+
+  "César Pelli": "სეზარ პელი",
+  "The desire to reach for the sky runs very deep in the human psyche.": "ცისკენ მიღწევის სურვილი ძალიან ღრმად არის ჩადებული ადამიანის ფსიქიკაში",
+
+  "Daniel Libeskind": "დენიელ ლიბესკინდი",
+  "Architecture is not based on concrete and steel, and the elements of the soil. It's based on wonder.": "არქიტექტურა არ არის დაფუძნებული ბეტონსა და ფოლადზე და ნიადაგის ელემენტებზე. ის დაფუძნებულია საოცრებაზე",
+
+  "Winston Churchill": "უინსტონ ჩერჩილი",
+  "We shape our buildings: thereafter they shape us": "ჩვენ ვაყალიბებთ ჩვენს შენობებს: შემდეგ ისინი გვაყალიბებენ ჩვენ"
 }

@@ -3,7 +3,7 @@
     margin-top: 0 !important;
     border-radius: 0 !important;
     height: 100% !important;
-
+    border:none !important;
   }
   .p-galleria-inset-indicators.p-galleria-indicators-bottom
     .p-galleria-indicator-list {
@@ -18,7 +18,7 @@
   gap: 50px;
   @media (max-width: 1024px) {
     flex-direction: column;
-    padding: 0 20px;
+    //padding: 0 20px;
   }
   @media (max-width: 768px) {
     gap:35px;
@@ -66,9 +66,10 @@
   }
   .card {
     //width: 730px;
-    height: 575px;
+    width: 100%;
+    max-height: calc(100vh - 124px);
     @media (max-width: 768px) {
-      height: 250px;
+      //height: 250px;
     }
   }
 }
@@ -234,13 +235,13 @@
           }
         }
         &:first-child {
-          @media (max-width: 768px) {
-            .image{
-              img{
-                height: 174px;
-              }
-            }
-          }
+          //@media (max-width: 768px) {
+          //  .image{
+          //    img{
+          //      height: 174px;
+          //    }
+          //  }
+          //}
         }
 
       }
@@ -249,7 +250,7 @@
     /* First row (2 columns) */
     .grid > div:nth-child(1),
     .grid > div:nth-child(2) {
-      grid-column: span 6; /* 2 items on a 12-column grid */
+      grid-column: span 4; /* 2 items on a 12-column grid */
       @media (max-width: 768px) {
         grid-column: auto;
       }
@@ -268,17 +269,17 @@
     /* Third row (2 columns again) */
     .grid > div:nth-child(6),
     .grid > div:nth-child(7) {
-      grid-column: span 6;
+      grid-column: span 4;
       @media (max-width: 768px) {
         grid-column: auto;
       }
     }
 
-    .grid > div:nth-child(1){
-      @media (max-width: 768px) {
-        grid-column: span 2;
-      }
-    }
+    //.grid > div:nth-child(1){
+    //  @media (max-width: 768px) {
+    //    grid-column: span 2;
+    //  }
+    //}
 
     /* Define a 12-column layout */
     .grid {
@@ -352,8 +353,8 @@
     align-items: flex-start;
     gap: 25px;
     justify-content: space-between;
-    border-bottom: 1px solid #b2b3b7;
-    padding-bottom: 54px;
+    //border-bottom: 1px solid #b2b3b7;
+    //padding-bottom: 54px;
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 48px;

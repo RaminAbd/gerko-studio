@@ -21,10 +21,12 @@ export class ProjectDetailsService {
       .GetByIdByLang(this.service.serviceUrl, req)
       .subscribe((resp) => {
         this.component.response = resp.data;
-        this.component.response.description = resp.data.description
-          .replace(/&nbsp;/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim();
+        if(resp.data.description){
+          this.component.response.description = resp.data.description
+            .replace(/&nbsp;/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
         console.log(resp.data);
         this.component.point.lat = this.component.response.latitude
         this.component.point.lng = this.component.response.longitude

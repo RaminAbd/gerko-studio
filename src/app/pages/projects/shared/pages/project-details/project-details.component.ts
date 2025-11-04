@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import {Component, ElementRef, inject, ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {DatePipe, Location, NgForOf, NgIf} from '@angular/common';
 import { ProjectDetailsService } from './project-details.service';
@@ -52,20 +52,139 @@ export class ProjectDetailsComponent {
     lat: 41.7276044,
     lng: 44.6419557,
   };
-  selectedImage: string;
-  showImageLightBox: boolean = false;
+
+  showImageLightBox = false;
+  selectedImage!: string;
+  currentIndex = 0;
   constructor() {
     this.service.component = this;
     this.service.getItem()
   }
+  //
+  // openImage(item: any) {
+  //   this.selectedImage = item;
+  //   console.log(item)
+  //   this.showImageLightBox = true;
+  // }
 
-  openImage(item: any) {
-    this.selectedImage = item;
-    console.log(item)
+  // closeImageLightbox() {
+  //   this.showImageLightBox = false;
+  // }
+
+  openImageLightbox(index: number) {
+    this.currentIndex = index;
+    this.selectedImage = this.response.images[index];
     this.showImageLightBox = true;
   }
 
   closeImageLightbox() {
     this.showImageLightBox = false;
   }
+
+  nextImage(event: MouseEvent) {
+    event.stopPropagation();
+    if (this.currentIndex < this.response.images.length - 1) {
+      this.currentIndex++;
+      this.selectedImage = this.response.images[this.currentIndex];
+    }
+  }
+
+  prevImage(event: MouseEvent) {
+    event.stopPropagation();
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.selectedImage = this.response.images[this.currentIndex];
+    }
+  }
+
+
+
+  @ViewChild('mapSection') mapSection!: ElementRef;
+
+  scrollToMap() {
+    this.mapSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  mapOptions: google.maps.MapOptions = {
+    styles: [
+      {
+        elementType: 'geometry',
+        stylers: [{ color: '#f5f5f5' }],
+      },
+      {
+        elementType: 'labels.icon',
+        stylers: [{ visibility: 'off' }],
+      },
+      {
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#616161' }],
+      },
+      {
+        elementType: 'labels.text.stroke',
+        stylers: [{ color: '#f5f5f5' }],
+      },
+      {
+        featureType: 'administrative.land_parcel',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#bdbdbd' }],
+      },
+      {
+        featureType: 'poi',
+        elementType: 'geometry',
+        stylers: [{ color: '#eeeeee' }],
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#757575' }],
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{ color: '#ffffff' }],
+      },
+      {
+        featureType: 'road.arterial',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#757575' }],
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{ color: '#dadada' }],
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#616161' }],
+      },
+      {
+        featureType: 'road.local',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#9e9e9e' }],
+      },
+      {
+        featureType: 'transit.line',
+        elementType: 'geometry',
+        stylers: [{ color: '#e5e5e5' }],
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'geometry',
+        stylers: [{ color: '#eeeeee' }],
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{ color: '#c9c9c9' }],
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{ color: '#9e9e9e' }],
+      },
+    ],
+  };
+
+
 }
