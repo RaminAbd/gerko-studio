@@ -102,6 +102,7 @@
   <!--  <img src="https://gerkoblob.blob.core.windows.net/images/25b893ea-7f0c-4b1b-8cfb-2a2126dc836018080dd9463074e337b50262844ca8d750654793%20%281%29.webp" alt="">-->
   <div class="logo">
     <svg
+      class="big"
       xmlns="http://www.w3.org/2000/svg"
       width="205"
       height="205"
@@ -134,6 +135,17 @@
         </clipPath>
       </defs>
     </svg>
+    <svg class="small" width="55" height="54" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_398_13)">
+        <path d="M27.442 0H55V13.5708H13.6057V40.4863H27.442L41.3369 26.9154H55V40.4863H27.442L13.6057 54H0V26.9154L13.6057 13.5708L27.442 0Z" fill="white" fill-opacity="0.5"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_398_13">
+          <rect width="55" height="54" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+
   </div>
   <div class="items">
     <p>{{ "Innovation" | translate }}</p>
@@ -157,7 +169,7 @@
             | translate
         }}
       </p>
-      <button style="text-transform: uppercase">
+      <button style="text-transform: uppercase" routerLink="/about">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="9"
