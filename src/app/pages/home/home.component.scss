@@ -77,7 +77,9 @@
   padding: 80px;
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  gap: 45px;
+  max-width: 1560px;
+  margin: 0 auto;
   @media (max-width: 1024px) {
     padding: 60px 20px;
   }
@@ -164,7 +166,7 @@
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 32px;
+          gap: 15px;
           align-self: stretch;
           @media (max-width: 768px) {
             gap:24px;

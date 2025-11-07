@@ -28,8 +28,9 @@ export class ProjectDetailsService {
             .trim();
         }
         console.log(resp.data);
-        this.component.point.lat = this.component.response.latitude
-        this.component.point.lng = this.component.response.longitude
+        this.component.zoomToServiceCenter()
       });
   }
+
+
 }

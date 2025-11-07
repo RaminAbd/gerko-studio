@@ -1,6 +1,8 @@
 .header-wrapper {
   padding: 0px 80px;
-
+  display: flex
+;
+  justify-content: center;
 
   .inner{
     border-bottom: 1px solid #B2B3B7;
@@ -8,6 +10,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 0px 10px 0;
+    width: 100%;
+    max-width: 1400px;
   }
   @media (max-width: 1024px) {
     display: none;

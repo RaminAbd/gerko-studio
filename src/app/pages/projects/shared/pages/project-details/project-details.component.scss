@@ -1,6 +1,11 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   .first {
     position: relative;
+    width: 100%;
     .back {
       position: absolute;
       top: 80px;
@@ -36,6 +41,11 @@
       }
     }
   }
+  .max-block{
+    max-width: 1300px;
+  }
+
+
   .second {
     padding: 64px 80px;
     display: flex;

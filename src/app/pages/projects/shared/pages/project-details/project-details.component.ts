@@ -1,4 +1,4 @@
-import {Component, ElementRef, inject, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, inject, ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {DatePipe, Location, NgForOf, NgIf} from '@angular/common';
 import { ProjectDetailsService } from './project-details.service';
@@ -81,23 +81,49 @@ export class ProjectDetailsComponent {
     this.showImageLightBox = false;
   }
 
-  nextImage(event: MouseEvent) {
-    event.stopPropagation();
+  nextImage(event?: MouseEvent) {
+    event?.stopPropagation();
     if (this.currentIndex < this.response.images.length - 1) {
       this.currentIndex++;
       this.selectedImage = this.response.images[this.currentIndex];
     }
   }
 
-  prevImage(event: MouseEvent) {
-    event.stopPropagation();
+  prevImage(event?: MouseEvent) {
+    event?.stopPropagation();
     if (this.currentIndex > 0) {
       this.currentIndex--;
       this.selectedImage = this.response.images[this.currentIndex];
     }
   }
 
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (!this.showImageLightBox) return;
 
+    switch (event.key) {
+      case 'ArrowRight':
+        this.nextImage();
+        break;
+      case 'ArrowLeft':
+        this.prevImage();
+        break;
+      case 'Escape':
+        this.closeImageLightbox();
+        break;
+    }
+  }
+
+  @ViewChild(GoogleMap) map!: GoogleMap;
+  zoomToServiceCenter() {
+    const target = { lat: this.response.latitude, lng: this.response.longitude };
+    this.center = target
+    console.log(this.map, this.center)
+    if (this.map && this.map.googleMap) {
+      this.map.googleMap.panTo(target);
+      this.map.googleMap.setZoom(17);
+    }
+  }
 
   @ViewChild('mapSection') mapSection!: ElementRef;
 
