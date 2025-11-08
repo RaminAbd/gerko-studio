@@ -19,14 +19,6 @@ import {TranslatePipe} from '@ngx-translate/core';
 export class ScrollerComponent implements AfterViewInit {
   @ViewChildren('scroller') scrollerEls!: QueryList<ElementRef>;
 
-  texts = [
-    '🚀 Unlock your potential — Keep pushing forward! 🚀 Unlock your potential — Keep pushing forward! 🚀',
-    '🚀 Unlock your potential — Keep pushing forward! 🚀 Unlock your potential — Keep pushing forward! 🚀',
-    '🚀 Unlock your potential — Keep pushing forward! 🚀 Unlock your potential — Keep pushing forward! 🚀',
-    '🚀 Unlock your potential — Keep pushing forward! 🚀 Unlock your potential — Keep pushing forward! 🚀',
-
-  ];
-
   constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit(): void {

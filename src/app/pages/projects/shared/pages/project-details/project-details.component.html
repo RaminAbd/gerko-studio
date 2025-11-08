@@ -26,11 +26,11 @@
           </div>
           <div class="item">
             <label>{{ "Build in" | translate }}</label>
-            <p>{{ response.date | date : "YYYY" }}</p>
+            <p>{{ response.date | date: "YYYY" }}</p>
           </div>
           <div class="item" *ngIf="response.endDate">
             <label>{{ "End date" | translate }}</label>
-            <p>{{ response.endDate | date : "YYYY" }}</p>
+            <p>{{ response.endDate | date: "YYYY" }}</p>
           </div>
           <div class="item">
             <label>{{ "Status" | translate }}</label>
@@ -47,19 +47,7 @@
           <div class="item">
             <label>{{ "Location" | translate }}</label>
             <p style="cursor: pointer" (click)="scrollToMap()">
-              {{ response.address
-              }}<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-            >
-              <path
-                d="M13.6693 10.7804L13.6424 0.410501L3.27256 0.383594C3.16452 0.368967 3.0546 0.377722 2.95024 0.409269C2.84588 0.440816 2.74952 0.494418 2.66767 0.566444C2.58583 0.638471 2.52042 0.727241 2.47586 0.826746C2.43131 0.92625 2.40865 1.03417 2.40943 1.14319C2.41021 1.25221 2.43441 1.35979 2.48038 1.45865C2.52635 1.55751 2.59302 1.64533 2.67589 1.71619C2.75875 1.78704 2.85587 1.83925 2.96067 1.86931C3.06547 1.89936 3.1755 1.90654 3.28332 1.89037L11.054 1.92266L0.759466 12.2172C0.616744 12.3599 0.536564 12.5535 0.536564 12.7553C0.536563 12.9572 0.616744 13.1507 0.759466 13.2935C0.902189 13.4362 1.09576 13.5164 1.2976 13.5164C1.49944 13.5164 1.69301 13.4362 1.83574 13.2935L12.1303 2.99893L12.1626 10.7696C12.1633 10.9716 12.2442 11.165 12.3875 11.3073C12.5308 11.4496 12.7248 11.5291 12.9267 11.5284C13.1287 11.5277 13.3221 11.4468 13.4644 11.3035C13.6067 11.1601 13.6862 10.9662 13.6855 10.7642L13.6693 10.7804Z"
-                fill="black"
-              />
-            </svg>
+              {{ response.address }}
             </p>
           </div>
         </div>
@@ -67,12 +55,23 @@
     </div>
     <div class="fifth">
       <div class="image-grid">
-        <img *ngFor="let img of response.images; let i = index" style="cursor: pointer" [src]="img" alt="House Image" (click)="openImageLightbox(i)"/>
+        <img
+          *ngFor="let img of response.images; let i = index"
+          style="cursor: pointer"
+          [src]="img"
+          alt="House Image"
+          (click)="openImageLightbox(i)"
+        />
       </div>
     </div>
     <div class="fourth">
       <div class="map" #mapSection>
-        <google-map   width="100%" [center]="center" [zoom]="14"  [options]="mapOptions">
+        <google-map
+          width="100%"
+          [center]="center"
+          [zoom]="14"
+          [options]="mapOptions"
+        >
           <map-marker [position]="center" title="My Pin"></map-marker>
         </google-map>
       </div>
@@ -118,4 +117,3 @@
 </div>
 
 <div class="blur" *ngIf="showImageLightBox"></div>
-

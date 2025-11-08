@@ -27,6 +27,7 @@
       animation: scroll var(--_animation-duration, 40s)
       var(--_animation-direction, forwards) linear infinite;
       background: #FFFF00;
+      white-space: nowrap;
       @media (max-width: 769px) {
         padding-block: 5px;
       }
@@ -56,6 +57,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
+  white-space: nowrap;
+  p{
+    display: inline-block;
+    white-space: nowrap;
+  }
 }
 
 .tag-list {
