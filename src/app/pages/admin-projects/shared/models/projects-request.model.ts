@@ -20,4 +20,5 @@ export class ProjectsRequestModel {
   fakeFile:FileModel = new FileModel();
   date:any;
   endDate: string;
+  indexAt: number;
 }

@@ -69,6 +69,14 @@
           id="status"
         ></p-dropdown>
       </div>
+      <div class="input-item">
+        <label>{{ "Index" | translate }}</label>
+        <input
+          type="number"
+          [(ngModel)]="request.indexAt"
+          placeholder="{{ 'Index' | translate }}"
+        />
+      </div>
 
 <!--      <div class="input-item">-->
 <!--        <label>{{ "Address" | translate }}</label>-->

@@ -88,13 +88,23 @@ export class ProjectUpsertService {
   save() {
     if (this.component.date) {
       const publishTime = new Date(structuredClone(this.component.date));
-      const updatedTime = new Date(publishTime.getTime() + 8 * 60 * 60 * 1000);
+
+      const updatedTime = new Date(
+        publishTime.getTime()
+        + 8 * 60 * 60 * 1000   // add 8 hours
+        + 2 * 24 * 60 * 60 * 1000 // add 2 days
+      );
+
       this.component.request.date = updatedTime.toISOString();
     }
 
     if(this.component.endDate){
       const endTime = new Date(structuredClone(this.component.endDate));
-      const updatedEndTime = new Date(endTime.getTime() + 8 * 60 * 60 * 1000);
+      const updatedEndTime = new Date(
+        endTime.getTime()
+        + 8 * 60 * 60 * 1000   // add 8 hours
+        + 2 * 24 * 60 * 60 * 1000 // add 2 days
+      );
       this.component.request.endDate = updatedEndTime.toISOString();
     }
 
