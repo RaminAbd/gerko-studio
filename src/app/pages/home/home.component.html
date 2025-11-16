@@ -30,6 +30,7 @@
 <!--  </div>-->
   <div class="card">
     <p-galleria
+      #galleriaRef
       [value]="bannerItems"
       [indicatorsPosition]="'bottom'"
       [showIndicators]="true"
@@ -41,7 +42,7 @@
       autoplayInterval="8000"
     >
       <ng-template pTemplate="item" let-item>
-        <a class="item" style="height: 100%;width: 100%;">
+        <a class="item" routerLink="/projects/{{item.id}}" style="height: 100%;width: 100%;">
           <img
             class="carousel-image"
             [src]="item.url"
@@ -73,11 +74,11 @@
         </div>
         <div class="info">
           <div class="name">
-            <p>{{item.type}}</p>
+            <p>{{item.name}}</p>
             <p>{{item.date | date :"YYYY"}}</p>
           </div>
           <div class="icon">
-            <span>{{ item.address }}</span>
+            <span>{{ item.type }}</span>
 
 <!--            <svg-->
 <!--              xmlns="http://www.w3.org/2000/svg"-->

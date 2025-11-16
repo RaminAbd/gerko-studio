@@ -38,7 +38,17 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class GuestHeaderComponent {
   private translate: TranslateService = inject(TranslateService)
-  selectedLang:string = 'en-Us';
+  selectedLang:string;
+
+  constructor() {
+    let lang = localStorage.getItem('systemLanguage') as string;
+    if(lang) {
+      this.selectedLang = lang;
+    }
+    else{
+      this.selectedLang = 'ka-Geo'
+    }
+  }
   selectLang(lang: string) {
     this.selectedLang = lang;
     localStorage.setItem('systemLanguage', lang);

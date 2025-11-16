@@ -1,9 +1,9 @@
-import {Component, ElementRef, HostListener, inject, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, inject, OnDestroy, ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {DatePipe, Location, NgForOf, NgIf} from '@angular/common';
 import { ProjectDetailsService } from './project-details.service';
 import {ProjectsResponseModel} from '../../../../admin-projects/shared/models/projects-response.model';
-import {TranslatePipe} from '@ngx-translate/core';
+import {LangChangeEvent, TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {GoogleMap, MapMarker} from '@angular/google-maps';
 import {animate, style, transition, trigger} from '@angular/animations';
 
@@ -38,7 +38,8 @@ import {animate, style, transition, trigger} from '@angular/animations';
     ]),
   ],
 })
-export class ProjectDetailsComponent {
+export class ProjectDetailsComponent implements OnDestroy{
+  private translate: TranslateService = inject(TranslateService);
   private route: ActivatedRoute = inject(ActivatedRoute);
   private service: ProjectDetailsService = inject(ProjectDetailsService);
   public location: Location = inject(Location);
@@ -56,9 +57,17 @@ export class ProjectDetailsComponent {
   showImageLightBox = false;
   selectedImage!: string;
   currentIndex = 0;
+
+  langSubscribtion: any;
   constructor() {
     this.service.component = this;
     this.service.getItem()
+
+    this.langSubscribtion = this.translate.onLangChange.subscribe(
+      (event: LangChangeEvent) => {
+        this.service.getItem();
+      }
+    );
   }
   //
   // openImage(item: any) {
@@ -211,6 +220,10 @@ export class ProjectDetailsComponent {
       },
     ],
   };
+
+  ngOnDestroy() {
+    this.langSubscribtion.unsubscribe();
+  }
 
 
 }

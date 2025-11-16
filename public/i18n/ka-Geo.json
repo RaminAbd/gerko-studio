@@ -64,5 +64,11 @@
   "Winston Churchill": "უინსტონ ჩერჩილი",
   "We shape our buildings: thereafter they shape us": "ჩვენ ვაყალიბებთ ჩვენს შენობებს: შემდეგ ისინი გვაყალიბებენ ჩვენ",
 
-  "N52 Queen Ketevan Avenue": "ქეთევან დედოფლის გამზირი N52"
+  "N52 Queen Ketevan Avenue": "ქეთევან დედოფლის გამზირი N52",
+
+  "Building Information": "შენობის ინფორმაცია",
+  "Type": "ტიპი",
+  "Year": "წელი",
+  "Status": "სტატუსი",
+  "Location": "ადგილმდებარეობა"
 }

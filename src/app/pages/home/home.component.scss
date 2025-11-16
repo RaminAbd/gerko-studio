@@ -87,9 +87,9 @@
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
+    //@media (max-width: 768px) {
+    //  flex-direction: column;
+    //}
     h2 {
       flex: 1;
       color: #000;
@@ -144,7 +144,6 @@
       gap: 23px;
 
       grid-row-gap: 40px;
-
       .item {
         display: flex;
         flex-direction: column;
@@ -157,8 +156,9 @@
           img {
             width: 100%;
             height: 300px;
+            object-fit: cover;
             @media (max-width: 768px) {
-              height: 120px;
+              height: 274px;
             }
           }
         }
@@ -176,79 +176,40 @@
             justify-content: space-between;
             align-items: flex-start;
             align-self: stretch;
+            border-bottom: 1px solid #E1E1E1;
+            padding-bottom: 6px;
             p{
-              color: #000;
-              font-size: 14px;
+              color: #9A9A9A;
+              font-size: 16px;
               font-style: normal;
               font-weight: 500;
               line-height: normal;
               text-transform: uppercase;
             }
           }
-          .descr {
-            p{
-              color: #000;
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
-              @media (max-width: 768px) {
-                font-size: 14px;
-              }
-            }
-            ::ng-deep p {
-              width: 100%;
-              word-break: break-word;
-              color: #000;
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal; /* 177.778% */
-              ::ng-deep strong {
-                font-size: 22px;
-              }
-              ::ng-deep a {
-                color: #333;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 32px;
-                text-decoration-line: underline;
-                text-decoration-style: solid;
-                text-decoration-skip-ink: auto;
-                text-decoration-thickness: auto;
-                text-underline-offset: auto;
-                text-underline-position: from-font;
-              }
-            }
-          }
+
           .icon{
             display: flex;
             align-items: center;
             gap:10px;
             span{
               color: #000;
-              font-size: 14px;
+              font-size: 16px;
               font-style: normal;
-              font-weight: 600;
+              font-weight: 500;
               line-height: normal;
               text-transform: uppercase;
             }
           }
         }
-        &:first-child {
-          //@media (max-width: 768px) {
-          //  .image{
-          //    img{
-          //      height: 174px;
-          //    }
-          //  }
-          //}
-        }
-
       }
     }
-
+    .grid > div{
+      grid-column: span 4;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
+    }
     /* First row (2 columns) */
     .grid > div:nth-child(1),
     .grid > div:nth-child(2) {
@@ -268,27 +229,49 @@
       }
     }
 
-    /* Third row (2 columns again) */
+    .grid > div:nth-child(8) {
+      grid-column: span 4;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
+      //img{
+      //  height: 320px !important;
+      //  @media (max-width: 768px) {
+      //    height: 274px !important;
+      //  }
+      //}
+    }
+
     .grid > div:nth-child(6),
     .grid > div:nth-child(7) {
       grid-column: span 4;
       @media (max-width: 768px) {
         grid-column: auto;
       }
+      //img{
+      //  height: 230px !important;
+      //  @media (max-width: 768px) {
+      //    height: 274px !important;
+      //  }
+      //}
     }
 
-    //.grid > div:nth-child(1){
-    //  @media (max-width: 768px) {
-    //    grid-column: span 2;
-    //  }
-    //}
+
+    /* Third row (2 columns again) */
+    .grid > div:nth-child(9),
+    .grid > div:nth-child(10) {
+      grid-column: span 4;
+      @media (max-width: 768px) {
+        grid-column: auto;
+      }
+    }
 
     /* Define a 12-column layout */
     .grid {
       grid-template-columns: repeat(12, 1fr);
       @media (max-width: 768px) {
         grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr
       }
     }
   }

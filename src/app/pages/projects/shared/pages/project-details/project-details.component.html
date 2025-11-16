@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="second">
-    <h1>{{ response.name }}</h1>
+
     <div class="description">
       <p [innerHTML]="response.description"></p>
     </div>
@@ -25,7 +25,7 @@
             <p>{{ response.type }}</p>
           </div>
           <div class="item">
-            <label>{{ "Build in" | translate }}</label>
+            <label>{{ "Year" | translate }}</label>
             <p>{{ response.date | date: "YYYY" }}</p>
           </div>
           <div class="item" *ngIf="response.endDate">
@@ -93,7 +93,10 @@
         (click)="prevImage($event)"
         [disabled]="currentIndex === 0"
       >
-        &#10094;
+        <svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.4864 24.975C12.3226 24.977 12.1603 24.9447 12.0097 24.8802C11.8592 24.8157 11.7238 24.7204 11.6123 24.6004L0.374592 13.3616C-0.124864 12.8621 -0.124864 12.0879 0.374592 11.5884L11.6123 0.374625C12.1118 -0.124875 12.886 -0.124875 13.3854 0.374625C13.8849 0.874126 13.8849 1.64835 13.3854 2.14785L3.02171 12.4875L13.3854 22.8521C13.8849 23.3516 13.8849 24.1259 13.3854 24.6254C13.1357 24.8751 12.811 25 12.5114 25L12.4864 24.975Z" fill="#fff"/>
+        </svg>
+
       </button>
 
       <!-- Image -->
@@ -107,7 +110,10 @@
         (click)="nextImage($event)"
         [disabled]="currentIndex === response.images.length - 1"
       >
-        &#10095;
+        <svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.25091 24.9999C1.08685 25.0019 0.924189 24.9696 0.773384 24.9051C0.622579 24.8406 0.486968 24.7453 0.375273 24.6253C-0.125091 24.1258 -0.125091 23.3516 0.375273 22.8521L10.7578 12.4875L0.375273 2.14784C-0.125091 1.64835 -0.125091 0.874123 0.375273 0.374624C0.875636 -0.124875 1.6512 -0.124875 2.15156 0.374624L13.3847 11.6383C13.8851 12.1378 13.8851 12.912 13.3847 13.4115L2.12655 24.6253C1.87636 24.875 1.55113 24.9999 1.25091 24.9999Z" fill="white"/>
+        </svg>
+
       </button>
     </div>
 
