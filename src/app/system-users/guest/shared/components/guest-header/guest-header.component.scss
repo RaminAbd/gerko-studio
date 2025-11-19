@@ -1,3 +1,12 @@
+::ng-deep{
+  app-guest-header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: #fff;
+  }
+}
+
 .header-wrapper {
   padding: 0px 80px;
   display: flex
@@ -5,7 +14,7 @@
   justify-content: center;
 
   .inner{
-    border-bottom: 1px solid #B2B3B7;
+    //border-bottom: 1px solid #B2B3B7;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,7 +106,7 @@ nav {
   #mob {
     flex-direction: column;
     padding: 20px 40px;
-    border-bottom: 1px solid #e3e3e2;
+    //border-bottom: 1px solid #e3e3e2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -144,9 +153,9 @@ nav {
 .logo {
   z-index: 4;
   img{
-    height: 46px;
+    height: 50px;
     @media (max-width: 768px) {
-      height: 33px;
+      height: 40px;
     }
   }
 }

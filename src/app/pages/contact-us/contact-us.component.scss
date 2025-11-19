@@ -1,9 +1,9 @@
 .wrapper {
-  padding: 40px 80px 120px;
+  padding: 125px 80px 120px;
   max-width: 1560px;
   margin: 0 auto;
   @media (max-width: 768px) {
-    padding: 40px 20px 120px;
+    padding: 125px 20px 120px;
   }
   .heading {
     display: flex;
@@ -77,7 +77,8 @@
       border:none;
     }
     .item {
-      flex: 2;
+      flex: 1.3;
+      max-width: 800px;
       img {
         width: 100%;
         height: 100%;
@@ -85,19 +86,7 @@
           height: 250px
         }
       }
-      &.map {
-        border-radius: 4px;
-        height: 355px;
-        ::ng-deep .map-container{
-          height: 355px !important;
-        }
-        @media (max-width: 768px) {
-          height: 250px;
-          ::ng-deep .map-container{
-            height: 250px !important;
-          }
-        }
-      }
+
       &.soc {
         display: flex;
         padding: 40px 0px;
@@ -127,10 +116,13 @@
             }
             p {
               color: #000;
-              font-size: 16px;
+              font-size: 21px;
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media (max-width: 768px) {
+                font-size: 16px;
+              }
             }
           }
         }
@@ -144,7 +136,7 @@
   }
   .form-block {
     display: flex;
-    gap: 32px;
+    //gap: 32px;
     @media (max-width: 768px) {
       flex-direction: column;
       gap:24px;
@@ -163,10 +155,13 @@
     }
     .form {
       display: flex;
-      flex: 1.3;
+
       flex-direction: column;
       align-items: flex-start;
       gap: 24px;
+      flex: 1.3;
+      max-width: 800px;
+
       .heading {
         h3 {
           color: #000;
@@ -183,6 +178,10 @@
         align-items: flex-start;
         gap: 12px;
         align-self: stretch;
+        padding-left:32px ;
+        @media (max-width: 768px) {
+          padding: 0;
+        }
       }
       .input-item {
         width: 100%;
@@ -201,6 +200,7 @@
           border-bottom: 1px solid #B2B3B7;
           background: none !important;
           border-radius: 0;
+          font-size: 16px;
           &::placeholder {
             color: #B2B3B7;
             font-size: 16px;
@@ -233,6 +233,19 @@
           width: 100%;
         }
       }
+    }
+  }
+}
+.map {
+  border-radius: 4px;
+  height: 355px;
+  ::ng-deep .map-container{
+    height: 355px !important;
+  }
+  @media (max-width: 768px) {
+    height: 250px;
+    ::ng-deep .map-container{
+      height: 250px !important;
     }
   }
 }

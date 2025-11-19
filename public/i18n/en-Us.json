@@ -65,10 +65,14 @@
   "We shape our buildings: thereafter they shape us": "We shape our buildings: thereafter they shape us",
 
   "N52 Queen Ketevan Avenue": "Queen Ketevan Avenue N52",
-  "Building Information": "",
-  "Type": "",
-  "Year": "",
-  "Status": "",
-  "Location": ""
+  "Building Information": "Building Information",
+  "Type": "Type",
+  "Year": "Year",
+  "Status": "Status",
+  "Location": "Location",
+  "End date": "End date",
+  "Size": "Area",
+  "Client": "Client",
+  "m": "m"
 
 }
