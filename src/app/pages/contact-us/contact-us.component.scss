@@ -70,6 +70,7 @@
     border-top: 1px solid #b2b3b7;
     margin-top: 80px;
     margin-bottom: 30px;
+    gap:32px;
     @media (max-width: 768px) {
       height: auto;
       flex-direction: column;
@@ -86,6 +87,17 @@
           height: 250px
         }
       }
+      //.comp{
+      //  @media (max-width: 768px) {
+      //    display: none;
+      //  }
+      //}
+      //.mob{
+      //  display: none;
+      //  @media (max-width: 768px) {
+      //    display: block;
+      //  }
+      //}
 
       &.soc {
         display: flex;
@@ -142,13 +154,16 @@
       gap:24px;
       margin-top: 20px;
     }
+    .txt{
+      flex: 1;
+      padding-right: 32px;
+    }
     h3 {
       color: #000;
       font-size: 40px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      flex: 1;
       @media (max-width: 768px) {
         font-size: 24px;
       }
@@ -178,7 +193,7 @@
         align-items: flex-start;
         gap: 12px;
         align-self: stretch;
-        padding-left:32px ;
+        //padding-left:32px ;
         @media (max-width: 768px) {
           padding: 0;
         }

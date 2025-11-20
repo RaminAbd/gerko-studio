@@ -44,17 +44,18 @@
   }
   .max-block{
     max-width: 1300px;
+    width: 100%;
   }
 
 
   .second {
-    padding: 64px 80px;
+    padding: 32px 80px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
     @media (max-width: 768px) {
-      padding: 40px 20px;
+      padding: 0px 20px;
       gap: 24px;
     }
     h1 {
@@ -105,6 +106,7 @@
   .third {
     display: inline-flex;
     align-items: flex-start;
+    justify-content: center;
     gap: 25px;
     padding: 20px 80px;
     width: 100%;
@@ -115,6 +117,9 @@
     }
     .txt{
       flex:1;
+      @media (max-width: 768px) {
+        display: none;
+      }
       p{
         color: #000;
         font-size: 24px;
@@ -201,7 +206,7 @@
           width: 100%;
           padding: 20px 0;
           border-bottom: 2px solid #B2B3B7;
-
+          gap:30px;
           label{
             color: #000;
             font-size: 16px;

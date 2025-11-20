@@ -18,11 +18,18 @@ export class ContactUsComponent {
     lat: 41.6875095,
     lng: 44.8264149,
   };
+  googleMapsApiKey: any = 'AIzaSyDx3Vf8XcVPGaKoQcIaldQgPzd7gAyTXCA';
   constructor() {
     this.service.component = this;
   }
 
   send() {
     this.service.send();
+  }
+
+  generateGoogleMapsLink(event: any) {
+    event.stopPropagation();
+    let url = `https://www.google.com/maps?q=${41.6875095},${44.8264149}&key=${this.googleMapsApiKey}`;
+    window.open(url, '_blank');
   }
 }
