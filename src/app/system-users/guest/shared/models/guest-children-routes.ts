@@ -13,12 +13,12 @@ export class GuestChildrenRoutes {
     { path: 'home', component: HomeComponent, data: { title: 'Home' } },
     { path: 'projects', component: ProjectsComponent, data: { title: 'Projects' } },
     { path: 'projects/:id', component: ProjectDetailsComponent, data: { title: 'Projects' } },
-    { path: 'news', component: NewsComponent, data: { title: 'News' } },
-    { path: 'news/:id', component: NewsDetailsComponent, data: { title: 'News' } },
+    // { path: 'news', component: NewsComponent, data: { title: 'News' } },
+    // { path: 'news/:id', component: NewsDetailsComponent, data: { title: 'News' } },
     { path: 'about', component: AboutUsComponent, data: { title: 'About us' } },
     { path: 'contact', component: ContactUsComponent, data: { title: 'Contact us' } },
 
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    // { path: '**', redirectTo: 'projects', pathMatch: 'full' },
+    { path: '**', redirectTo: 'home', pathMatch: 'full' },
   ];
 }

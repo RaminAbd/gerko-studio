@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   gap: 54px;
-  min-height: 700px;
+
   max-width: 1560px;
   margin: 0 auto;
-
+  min-height: calc(100vh - 315px);
   padding-top: 125px;
 
   @media (max-width: 768px) {
